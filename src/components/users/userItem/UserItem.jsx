@@ -1,6 +1,7 @@
+import { Button } from "../../forms";
 import styles from "./styles.module.css";
 
-const { item, delBtn } = styles;
+const { item, delButton } = styles;
 
 const UserItem = ({ user, deleteHandler }) => {
   return (
@@ -10,9 +11,13 @@ const UserItem = ({ user, deleteHandler }) => {
         <li>gender: {user.gender}</li>
         <li>address: {user.address}</li>
       </ul>
-      <div className={delBtn} onClick={() => deleteHandler(user.id)}>
+      <Button
+        className={delButton}
+        variant="danger"
+        onClick={() => deleteHandler(user.id)}
+      >
         Delete
-      </div>
+      </Button>
     </div>
   );
 };

@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import Input from "../Input/Input";
 
 const InsertUser = ({ insertHandler }) => {
+  const firstInput = useRef();
   const [input, setInput] = useState({
     id: null,
     name: "",
@@ -17,36 +19,32 @@ const InsertUser = ({ insertHandler }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     const id = Math.floor(Math.random() * 100);
-
     insertHandler({ ...input, id });
   };
 
   return (
     <form onSubmit={submitHandler}>
-      <input
-        type="text"
+      <Input
         placeholder="name"
-        className="form-input"
         value={input.name}
         name="name"
         onChange={inputHandler}
+        ref={firstInput}
       />
-      <input
-        type="text"
+      <Input
         placeholder="gender"
-        className="form-input"
         name="gender"
         value={input.gender}
         onChange={inputHandler}
       />
-      <input
-        type="text"
+
+      <Input
         placeholder="address"
-        className="form-input"
         name="address"
         value={input.address}
         onChange={inputHandler}
       />
+
       <button type="submit" className="button">
         Submit
       </button>

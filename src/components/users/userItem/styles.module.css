@@ -9,15 +9,8 @@
   padding-bottom: 5px;
 }
 
-.delBtn {
-  padding: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: red;
-  color: white;
+.delButton {
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   right: 10px;
-  cursor: pointer;
 }
